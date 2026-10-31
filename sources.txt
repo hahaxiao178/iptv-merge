@@ -1,0 +1,15 @@
+# ============================================================
+# 直播源清单（每行一个"逻辑源"。一行内可用 | 分隔多个备用地址，依次尝试直到成功）
+# # 开头为注释，会被忽略。排在前面的源优先级更高（去重时同名/同地址只留先出现的）
+# ============================================================
+
+# 国内主源：fanmingming/live —— 央视1-17 + 各大卫视，GitHub Actions 每日更新
+# 第1个用 jsDelivr 镜像（国内直连快、稳），第2个 raw 兜底，第3个官方备用域名
+https://cdn.jsdelivr.net/gh/fanmingming/live@main/tv/m3u/ipv6.m3u | https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u | https://live.fanmingming.cn/tv/m3u/ipv6.m3u
+
+# 国内/海外中文台补充：iptv-org 中国频道（自动剔除失效源）
+https://iptv-org.github.io/iptv/countries/cn.m3u
+
+# 如需全球频道（CNN/BBC/NHK 等），取消下面注释。
+# 注意：全量 index 有上万频道，APTV 加载会偏慢，按需开启。
+# https://iptv-org.github.io/iptv/index.m3u
